@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Django Inference Template</title>
+  {# Load the tag library #}
+  {% load bootstrap5 %} 
+
+  {# Load CSS and JavaScript #}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+
+</head>
+<body>
+  <div class="container py-3">
+    <header>
+      <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+        <!-- <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+          <a class="me-3 py-2 text-dark text-decoration-none" href="#">圖鑑辨識</a>
+          <a class="me-3 py-2 text-dark text-decoration-none" href="#">預訓練辨識</a>
+        </nav> -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home:index' %}">DJango Inference Template</a>
+            {% comment %} <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'inference:report_list' %}">上傳報告列表</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'inference:record_list' %}">分析結果列表</a>
+                </li>
+              </ul>
+            </div>
+          </div> {% endcomment %}
+        </nav>
+      </div>
+    </header>
+  
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+  
+    <footer class="pt-4 my-md-5 pt-md-5 border-top" style="height: 20vh;">
+      <div class="row">
+        <div class="col-12 col-md">
+          <small class="d-block mb-3 text-muted">&copy; 20XX XXXXXX.  All rights reserved.</small>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>

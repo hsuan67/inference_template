@@ -7,6 +7,9 @@ cd inference_template
 python manage.py migrate
 ```
 
+# Implement Your Inference
+in ```inference.views.inference```, your write your inference and return result
+
 # Run Website
 ```
 python manage.py runserver

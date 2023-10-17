@@ -14,3 +14,21 @@ in ```inference.views.inference```, your write your inference and return result
 ```
 python manage.py runserver
 ```
+- Open http://localhost:8000
+
+# Create Super user
+```
+python manage.py createsuper
+```
+- username
+- email
+- password
+- When you activate the website, you can log in to the backend using the following URL with your username and password.
+- [http://localhost:8000/admin](http://localhost:8000/admin)
+
+# Deployment
+TBD
+
+# Refernece
+- [Django Document](https://docs.djangoproject.com/)
+- [Bootstrap v5 Document (Chinese)](https://bootstrap5.hexschool.com/)

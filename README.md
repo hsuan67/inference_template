@@ -4,6 +4,7 @@
 ```
 pip install -r requirements.txt
 cd inference_template
+python create_env.py
 python manage.py migrate
 ```
 

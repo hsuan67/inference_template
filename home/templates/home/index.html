@@ -6,22 +6,17 @@
   <div class="col-md-5">
     <div class="card h-100 mb-4 rounded-3 shadow-sm">
       <div class="card-header py-3">
-        <h4 class="my-0 fw-normal">Upload File</h4>
+        <h4 class="my-0 fw-normal">上傳檔案</h4>
       </div>
       <div class="card-body">
-        <form 
-          method="post" 
-          action="{% url "inference:submit" %}" 
-          enctype="multipart/form-data"
-          id="upload_form"
-        >
-        <div>
-          {% csrf_token %}
-          <p id="error_text" style="color:red;"></p>
-          <label for="id_file" class="form-label">Allowed format：csv</label>
-          <input class="form-control" type="file" id="id_file" name="file">
-          <button type="submit" class="w-100 btn btn-lg btn-outline-primary mt-2">Inference</button>
-        </div>
+        <form method="post" action="{% url " inference:submit" %}" enctype="multipart/form-data" id="upload_form">
+          <div>
+            {% csrf_token %}
+            <p id="error_text" style="color:red;"></p>
+            <label for="id_file" class="form-label">Allowed format：csv</label>
+            <input class="form-control" type="file" id="id_file" name="file">
+            <button type="submit" class="w-100 btn btn-lg btn-outline-primary mt-2">Inference</button>
+          </div>
         </form>
       </div>
     </div>
@@ -33,16 +28,16 @@
   const errorText = document.getElementById('error_text');
 
   // Watch Submit
-  document.getElementById('upload_form').addEventListener('submit', function(event) {
+  document.getElementById('upload_form').addEventListener('submit', function (event) {
     if (fileInput.files.length === 0) {
       errorText.textContent = 'Please select a file';
       event.preventDefault(); // 阻止表單提交
       return;
     }
-  
+
     const fileExtension = fileInput.files[0].name.split('.').pop().toLowerCase();
     const allowedExtensions = ['csv'];
-  
+
     if (!allowedExtensions.includes(fileExtension)) {
       errorText.textContent = '"File format is not correct. Please upload a csv file.';
       event.preventDefault(); // 阻止表單提交
